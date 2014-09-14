@@ -1,0 +1,59 @@
+#git tutorial
+#check ssh keys
+ls -al ~/.ssh
+#are files id_rsa.pub or id_dsa.pub present?
+#if no do this :
+# Creates a new ssh key, using the provided email as a label
+ssh-keygen -t rsa -C "bertrand.deweer@gmail.com"
+#enter file name
+id_rsa.pub or id_dsa.pub
+#enter passphrase (shurik'n)
+#it will produce this :
+Your identification has been saved in id_rsa.pub.
+Your public key has been saved in id_rsa.pub.pub.
+The key fingerprint is:
+5d:4a:c5:89:4f:f4:52:36:e8:ab:48:8b:92:aa:f9:01 bertrand.deweer@gmail.com
+The key's randomart image is:
++--[ RSA 2048]----+
+|           +oo+  |
+|          ..=+ . |
+|          .+o .  |
+|         o oo.   |
+|E       S o  .   |
+| .      .   .    |
+|  .  . o o .     |
+| . .o . o .      |
+|ooo. .           |
++-----------------+
+# start the ssh-agent in the background
+eval "$(ssh-agent -s)"
+# will produce this : Agent pid 30330
+ssh-add ~/.ssh/id_rsa
+
+sudo apt-get install xclip
+xclip -sel clip < ~/.ssh/id_rsa.pub
+#go to github dashboard and create a new ssh key
+# test it now
+ssh -T git@github.com
+
+#configure git
+git config --global user.email "bertrand.deweer@gmail.com"
+git config --global user.name "geniusit"
+
+#init commit
+git add .
+git commit
+
+#add to buffer (snapshot)
+git add filename
+
+#commit
+git commit -m "first commit"
+#add remote
+git remote add origin git@github.com:geniusit/myubuntu.git
+
+#clone
+git clone https://github.com/geniusit/myubuntu.git
+or
+git@github.com:geniusit/myubuntu.git
+
