@@ -36,6 +36,9 @@ xclip -sel clip < ~/.ssh/id_rsa.pub
 # test it now
 ssh -T git@github.com
 
+#add remote
+git remote add origin git@github.com:geniusit/myubuntu.git
+
 #configure git
 git config --global user.email "bertrand.deweer@gmail.com"
 git config --global user.name "geniusit"
@@ -49,8 +52,7 @@ git add filename
 
 #commit
 git commit -m "first commit"
-#add remote
-git remote add origin git@github.com:geniusit/myubuntu.git
+
 
 #clone
 git clone https://github.com/geniusit/myubuntu.git
