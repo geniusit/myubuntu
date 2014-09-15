@@ -57,3 +57,5 @@ git clone https://github.com/geniusit/myubuntu.git
 or
 git@github.com:geniusit/myubuntu.git
 
+git pull origin
+
