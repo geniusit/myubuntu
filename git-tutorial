@@ -43,6 +43,9 @@ git remote add origin git@github.com:geniusit/myubuntu.git
 git config --global user.email "bertrand.deweer@gmail.com"
 git config --global user.name "geniusit"
 
+#rebase mode
+git config --global branch.autosetuprebase always
+
 #init commit
 git add .
 git commit
